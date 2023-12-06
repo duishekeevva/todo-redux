@@ -11,3 +11,90 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding-left: 20px;
+  height: 100vh;
+  background-color: rgba(198, 227, 252, 0.27);
+}
+
+.add-input {
+  display: flex;
+  justify-content: space-between;
+}
+.todo-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  justify-content: space-between;
+}
+
+.edit-save {
+  display: flex;
+  gap: 8px;
+}
+
+input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  padding: 10px;
+}
+
+.add-btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #007bff;
+  transition: all 0.3s ease;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  color: #424244;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+h3 {
+  font-size: 18px;
+  color: #424244;
+  padding-left: 10px;
+}
+
+.bxs-trash {
+  font-size: 22px;
+  color: #ab0a0a;
+}
+
+.bxs-save {
+  font-size: 22px;
+  color: #007bff;
+}
+
+.bxs-edit-alt {
+  font-size: 22px;
+  color: #59cc0d;
+}

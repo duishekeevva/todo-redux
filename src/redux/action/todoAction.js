@@ -11,6 +11,12 @@ export const deleteTodo = (id) => {
 }
 
 export const editTodo = (todo) => {
-    return { type: 'EDIT_TODO', payload: todo };
+    return { type: 'EDIT_TODO', payload: todo }
 }
+
+export const saveEdit = (todo)=>{
+    return { type: 'SAVE_EDIT', payload:todo}
+}
+
+
 

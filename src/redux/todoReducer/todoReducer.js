@@ -1,5 +1,8 @@
+import {editTodo} from "../action/todoAction";
+
 const initialState = {
-    todos: []
+    todos: [],
+    editTodo:{}
 }
 
 export const todoReducer = (state = initialState, action) => {
@@ -11,9 +14,9 @@ export const todoReducer = (state = initialState, action) => {
         case 'DELETE_TODO':
             return {...state, todos: state.todos.filter((todo)=>todo.id!==action.payload)}
         case 'EDIT_TODO':
-            console.log(action.payload)
-            return {...state, todos: state.todos.map((todo)=>todo.id===action.payload.id?action.payload:todo)}
-
+            return {...state, todos: editTodo(action.payload)}
+        case 'SAVE_EDIT':
+              return {...state, todos: state.todos.map(todo => todo.id === action.payload.id ? action.payload:todo)}
         default:
             return state
     }
