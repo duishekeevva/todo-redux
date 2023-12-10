@@ -1,100 +1,176 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
 * {
-  margin: 0;
-  padding:0;
-  box-sizing: border-box;
-  font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
 }
+
 
 .todo-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  padding-left: 20px;
-  height: 100vh;
-  background-color: rgba(198, 227, 252, 0.27);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
 }
 
-.add-input {
-  display: flex;
-  justify-content: space-between;
+.user-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
 }
-.todo-item {
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.logo-img {
+    width: 250px;
+}
+.header-btn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.todo-users-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px
+}
+
+.homeLink {
+    padding: 10px 25px;
+    background-color: #e56910;
+    border-radius: 0.375rem;
+    margin-top:20px;
+    color: #fff;
+    font-weight: 600;
+}
+
+
+.delete-edit-btn {
     display: flex;
     gap: 10px;
+}
+
+
+.save-close-btn {
+    display: flex;
+    justify-content: space-between;
+    padding:20px 80px;
+}
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0,0,0,0.4)!important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
     align-items: center;
-  justify-content: space-between;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
 }
 
-.edit-save {
-  display: flex;
-  gap: 8px;
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
 }
 
-input {
-  outline: none;
-  border: none;
-  border-bottom: 1px solid #ccc;
-  width: 100%;
-  padding: 10px;
+.modal-content {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #fff;
+    width: 700px;
+    height: 700px;
+    transform: scale(0.5);
+    transition: 0.5s all;
 }
 
-.add-btn {
-  width: 100px;
-  height: 40px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
-  background-color: #007bff;
-  transition: all 0.3s ease;
+.modal-content .active {
+    transform: scale(1);
 }
 
-button {
-  outline: none;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 600;
-  color: #424244;
-  background-color: transparent;
-  transition: all 0.3s ease;
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #ccc;
+    font-size: 24px;
+}
+p {
+    font-size: 20px;
+    color: #424244;
+    margin: 5px;
+    padding-left: 10px;
 }
 
-h3 {
-  font-size: 18px;
-  color: #424244;
-  padding-left: 10px;
+.btn-success {
+    font-size: 24px;
+    padding:10px 20px!important;
 }
 
-.bxs-trash {
-  font-size: 22px;
-  color: #ab0a0a;
+.add-todo {
+    display: flex;
+    justify-content: space-between;
+    gap:10px;
 }
 
-.bxs-save {
-  font-size: 22px;
-  color: #007bff;
+.add-todo input {
+    width: 100%;
+    padding: 0 10px;
+    outline: none;
+    border: 1px solid #ccc;
+    font-size: 24px;
+    border-radius: 0.375rem;
 }
 
-.bxs-edit-alt {
-  font-size: 22px;
-  color: #59cc0d;
+.btn-secondary {
+    font-size: 24px;
+    padding:10px 25px!important;
+}
+
+.bx-x {
+    cursor: pointer;
+    font-size: 48px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+
+.edit-delete-todo {
+    display: flex;
+    gap: 10px;
 }
