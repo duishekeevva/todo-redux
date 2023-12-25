@@ -1,11 +1,20 @@
 import axios from "axios";
-import {ADD_TODOS, EDIT_USER, GET_TODO, GET_USER, GET_USERS, REMOVE_USER} from "../types";
+import {ADD_TODOS, ADD_USER, EDIT_USER, GET_TODO, GET_USER, GET_USERS, REMOVE_USER} from "../types";
 
 export const getUsers=() =>{
     return (dispatch) => {
         axios.get('https://65642480ceac41c0761d7ea7.mockapi.io/users')
           .then(({data}) => {
                 dispatch({type: GET_USERS, payload: data})
+            })
+    }
+}
+
+export const addUser=(user)=> {
+    return (dispatch) => {
+        axios.post('https://65642480ceac41c0761d7ea7.mockapi.io/users', user)
+         .then(({data}) => {
+                dispatch({type: ADD_USER, payload: data})
             })
     }
 }

@@ -13,8 +13,6 @@ const TodoPage = () => {
         dispatch(getTodos())
     }, []);
 
-
-
     return (
         <div className={'todo-container'}>
 

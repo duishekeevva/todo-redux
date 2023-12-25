@@ -1,29 +1,37 @@
 import React, {useState} from 'react';
 import {addTodo} from "../../redux/action/todoAction";
 import {useDispatch} from "react-redux";
+import {useForm} from "react-hook-form";
 
 const AddForm = () => {
-    const [newTodo, setNewTodo] = useState('')
-    const dispatch = useDispatch()
+    const dispatch=useDispatch()
+    const {
+        register,
+        handleSubmit,
+        formState: {errors},
+        reset,
+    } = useForm();
 
-    const handleAddTodo = () => {
-        const obj = {
-            title: newTodo,
-            'completed': false,
-            'createAt': +new Date(),
-            'completedAt': null
-        }
-        setNewTodo('')
-        dispatch(addTodo(obj))
+    const onSubmit = (data) =>{
+        dispatch(addTodo(data))
+        reset()
     }
     return (
-        <div className={'add-todo'}>
-            <input value={newTodo} onChange={(e) => setNewTodo(e.target.value)} type="text"/>
-            <button style={{padding: '6px 15px',
-                borderRadius: '0.375rem',
-                border:'none',
-                backgroundColor: '#198754',
-                color: '#fff'}} onClick={handleAddTodo}>Add</button>
+        <div>
+            <form onSubmit={handleSubmit(onSubmit)} action="">
+                <div>
+                    <div>
+                        <input placeholder={'task'} type="text"
+                               {...register('title',{required: true})}
+                        />
+                        {
+                            errors.title?.type==='required' &&
+                            <span className={'text-danger'}>{errors.title.message}</span>
+                        }
+                        <button type={'submit'} className={'btn btn-primary'}>Add</button>
+                    </div>
+                </div>
+            </form>
         </div>
     );
 };

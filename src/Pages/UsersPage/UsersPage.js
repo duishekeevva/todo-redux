@@ -3,6 +3,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {getUsers} from "../../redux/action/userAction";
 import UserItem from "../../components/UserItem/UserItem";
 import {addTodo} from "../../redux/action/todoAction";
+import AddUserForm from "../../components/AddForm/AddUserForm";
+import {Link} from "react-router-dom";
 
 const UsersPage = () => {
     const dispatch = useDispatch()
@@ -14,6 +16,7 @@ const UsersPage = () => {
 
     return (
         <div className={'user-container'}>
+            <AddUserForm/>
             <table className="table table-hover">
                 <thead>
                 <tr>

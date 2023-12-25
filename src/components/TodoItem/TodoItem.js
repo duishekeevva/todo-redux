@@ -19,6 +19,7 @@ const TodoItem = ({el,idx}) => {
         dispatch(editTodo(edit))
         setEdit({})
     }
+
     return (
         <tr className={'todo-item'}>
                 {
